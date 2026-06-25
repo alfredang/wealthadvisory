@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sterling &amp; Vale Advisory — Long-Term Wealth Management</title>
+  <meta name="description" content="Sterling & Vale Advisory provides calm, long-term wealth management for professionals and families: wealth planning, retirement strategy, portfolio management, and estate planning." />
+
+  <!-- Google Fonts: Playfair Display (serif headings) + Inter (sans body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="site-header" id="home">
+    <div class="container nav-inner">
+      <a href="#home" class="wordmark" aria-label="Sterling and Vale Advisory home">
+        Sterling <span class="amp">&amp;</span> Vale
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">About</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link nav-link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">Independent &middot; Fiduciary &middot; Since 2004</p>
+        <h1 id="hero-heading" class="hero-heading reveal">
+          Grow and protect<br />what matters most.
+        </h1>
+        <p class="hero-sub reveal">
+          Thoughtful, long-term wealth management for professionals and families.
+          We help you plan with clarity, invest with discipline, and pass on a legacy
+          that lasts.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn--gold">Book a Consultation</a>
+          <a href="#services" class="btn btn--ghost">Explore Our Services</a>
+        </div>
+
+        <!-- Trust stats -->
+        <dl class="hero-stats reveal">
+          <div class="stat">
+            <dt class="stat-value">$10B+</dt>
+            <dd class="stat-label">Assets advised</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-value">20+</dt>
+            <dd class="stat-label">Years of experience</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-value">98%</dt>
+            <dd class="stat-label">Client retention</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ====================== SERVICES / ABOUT ====================== -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">What we do</p>
+          <h2 id="services-heading" class="section-title">A measured approach to lasting wealth</h2>
+          <p class="section-lead">
+            We act as fiduciaries — your interests come first. Every plan is built around
+            your goals, your timeline, and the people you care about.
+          </p>
+        </header>
+
+        <ul class="service-grid">
+          <!-- Wealth Planning -->
+          <li class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V8l7-5 7 5v13" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </span>
+            <h3 class="service-title">Wealth Planning</h3>
+            <p class="service-desc">A clear, written roadmap that aligns your finances with the life you want.</p>
+          </li>
+
+          <!-- Retirement Strategy -->
+          <li class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+            </span>
+            <h3 class="service-title">Retirement Strategy</h3>
+            <p class="service-desc">Income you can rely on, structured to last through every season of life.</p>
+          </li>
+
+          <!-- Portfolio Management -->
+          <li class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18" />
+                <path d="M7 14l3-3 3 3 5-6" />
+              </svg>
+            </span>
+            <h3 class="service-title">Portfolio Management</h3>
+            <p class="service-desc">Diversified, evidence-based investing — disciplined in calm and in turbulence.</p>
+          </li>
+
+          <!-- Estate Planning -->
+          <li class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" />
+                <path d="M9.5 12l1.8 1.8L15 10" />
+              </svg>
+            </span>
+            <h3 class="service-title">Estate Planning</h3>
+            <p class="service-desc">Pass on your legacy with intention, efficiency, and care for the next generation.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= TESTIMONIALS ======================= -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow section-eyebrow--light">In their words</p>
+          <h2 id="testimonials-heading" class="section-title section-title--light">Trusted across generations</h2>
+        </header>
+
+        <div class="carousel reveal" id="carousel">
+          <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Previous testimonial" aria-controls="carouselTrack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+
+          <div class="carousel-viewport">
+            <ul class="carousel-track" id="carouselTrack" aria-live="polite">
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <figure class="quote-card">
+                  <blockquote class="quote-text">
+                    “Sterling &amp; Vale gave us a plan we actually understand. For the first
+                    time, retirement feels calm rather than uncertain.”
+                  </blockquote>
+                  <figcaption class="quote-meta">
+                    <span class="avatar" aria-hidden="true">MR</span>
+                    <span class="quote-person">
+                      <strong>Margaret Reyes</strong>
+                      <span class="quote-role">Retired Engineer</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <figure class="quote-card">
+                  <blockquote class="quote-text">
+                    “They steadied us through a volatile year without a single moment of
+                    pressure. Disciplined advice, plainly explained.”
+                  </blockquote>
+                  <figcaption class="quote-meta">
+                    <span class="avatar" aria-hidden="true">DC</span>
+                    <span class="quote-person">
+                      <strong>David Chen</strong>
+                      <span class="quote-role">Small-Business Owner</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <figure class="quote-card">
+                  <blockquote class="quote-text">
+                    “We came for portfolio help and stayed for the partnership. Our estate
+                    plan now protects three generations.”
+                  </blockquote>
+                  <figcaption class="quote-meta">
+                    <span class="avatar" aria-hidden="true">AP</span>
+                    <span class="quote-person">
+                      <strong>Aisha &amp; Tom Patel</strong>
+                      <span class="quote-role">Physicians &amp; Parents</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Next testimonial" aria-controls="carouselTrack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose testimonial"></div>
+      </div>
+    </section>
+
+    <!-- ========================= ENQUIRY FORM ========================= -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-inner">
+        <div class="contact-intro reveal">
+          <p class="section-eyebrow">Let's talk</p>
+          <h2 id="contact-heading" class="section-title">Book a consultation</h2>
+          <p class="section-lead">
+            Tell us a little about your goals. We'll be in touch within one business day —
+            no obligation, no jargon.
+          </p>
+          <ul class="contact-points">
+            <li>A confidential, no-pressure conversation</li>
+            <li>Clear next steps tailored to you</li>
+            <li>Speak directly with a senior advisor</li>
+          </ul>
+        </div>
+
+        <div class="form-wrap reveal">
+          <form id="enquiryForm" class="enquiry-form" novalidate>
+            <!-- Honeypot: hidden from users, catches bots -->
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="field">
+              <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" aria-describedby="err-name" />
+              <p class="field-error" id="err-name" role="alert"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="err-email" />
+                <p class="field-error" id="err-email" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone <span class="optional">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="err-phone" />
+                <p class="field-error" id="err-phone" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="interest">Investment interest</label>
+              <select id="interest" name="interest">
+                <option value="Wealth Planning">Wealth Planning</option>
+                <option value="Retirement">Retirement</option>
+                <option value="Portfolio Management">Portfolio Management</option>
+                <option value="Estate Planning">Estate Planning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="err-message" placeholder="What would you like help with?"></textarea>
+              <p class="field-error" id="err-message" role="alert"></p>
+            </div>
+
+            <button type="submit" class="btn btn--gold btn--block" id="submitBtn">Send Enquiry</button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="form-fineprint">By submitting, you agree to be contacted about your enquiry. We never share your details.</p>
+          </form>
+
+          <!-- Success message, shown after a successful submit -->
+          <div class="form-success" id="formSuccess" hidden>
+            <span class="success-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+            </span>
+            <h3>Thank you</h3>
+            <p>Thanks — we'll be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="wordmark wordmark--light">Sterling <span class="amp">&amp;</span> Vale</a>
+        <p class="footer-tagline">Calm, long-term wealth management for the people you care about.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> Sterling &amp; Vale Advisory. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        This website is for informational purposes only and does not constitute financial advice.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
