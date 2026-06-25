@@ -2,6 +2,8 @@
 
 A polished, responsive one-page investment advisory site built with **vanilla HTML, CSS, and JavaScript** — no frameworks, no build tools. The only external dependency is Google Fonts (Playfair Display + Inter).
 
+Styled in a premium **deep-purple + gold** theme, the page is built around a single conversion: a free, no-obligation **Wealth Health Check** lead-magnet enquiry form that emails submissions to the firm via FormSubmit.
+
 🔗 **Live site:** https://alfredang.github.io/wealthadvisory/
 
 ![Sterling & Vale Advisory homepage](screenshot.png)
@@ -17,7 +19,7 @@ A polished, responsive one-page investment advisory site built with **vanilla HT
 No server or build step is required:
 
 1. Double-click `index.html` (or right-click → Open With → your browser).
-2. Check: sticky nav, smooth-scrolling anchors, hero "Book a Consultation" jumps to the form, the testimonial carousel auto-rotates with working prev/next + dots, and sections fade in on scroll.
+2. Check: sticky nav, smooth-scrolling anchors, hero "Get My Free Wealth Check" jumps to the form, the testimonial carousel auto-rotates with working prev/next + dots, and sections fade in on scroll.
 3. Resize the window to ~375px / ~768px / ~1280px to confirm the hamburger menu, card stacking, and overall responsiveness.
 4. Open DevTools → Console to confirm there are no errors.
 
@@ -54,6 +56,9 @@ Until you click the activation link, submissions will **not** arrive in your inb
 
 ### Spam protection
 A hidden honeypot field (`_honey`) is included and hidden via CSS. Bots that fill it are silently ignored. The form also sends `_captcha: "false"`, `_template: "table"`, and a custom `_subject` to FormSubmit.
+
+## SEO
+The `<head>` includes a canonical URL, Open Graph + Twitter Card tags, a `theme-color`, and `FinancialService` JSON-LD structured data (with the free-review `Offer`) so the page presents well in search results and social shares.
 
 ## Notes
 - Disclaimer in the footer: *"This website is for informational purposes only and does not constitute financial advice."*
