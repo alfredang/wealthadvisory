@@ -4,6 +4,8 @@ A polished, responsive one-page investment advisory site built with **vanilla HT
 
 🔗 **Live site:** https://alfredang.github.io/wealthadvisory/
 
+![Sterling & Vale Advisory homepage](screenshot.png)
+
 ## Files
 - `index.html` — markup and content
 - `styles.css` — mobile-first styling, themed via `:root` custom properties
