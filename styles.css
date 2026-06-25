@@ -5,17 +5,18 @@
 
 /* ----------------------------- Tokens ----------------------------- */
 :root {
-  /* Palette */
-  --navy:   #0f1f3d;
-  --navy-2: #16294d;
-  --slate:  #2a3a55;
-  --gold:   #c2a35a;
-  --gold-dark: #a8883f;
-  --bg:     #f8f7f3;   /* off-white */
+  /* Palette — deep royal purple base with a warm gold accent.
+     (Variable names kept as --navy/--gold for stability; values are purple.) */
+  --navy:   #1e1033;   /* deep royal purple */
+  --navy-2: #2a1648;   /* lifted purple */
+  --slate:  #463159;   /* muted purple-slate */
+  --gold:   #c9a85f;   /* warm champagne-gold accent */
+  --gold-dark: #ab8a3f;
+  --bg:     #f7f5fb;   /* soft off-white with a violet tint */
   --surface:#ffffff;
-  --text:   #1c2433;
-  --muted:  #5b6679;
-  --line:   #e4e2da;
+  --text:   #221a2e;
+  --muted:  #685c78;
+  --line:   #e7e2ef;
   --white:  #ffffff;
 
   /* Spacing scale */
@@ -32,9 +33,9 @@
   --radius-sm: 8px;
 
   /* Effects */
-  --shadow-sm: 0 1px 3px rgba(15, 31, 61, 0.06);
-  --shadow:    0 10px 30px rgba(15, 31, 61, 0.08);
-  --shadow-lg: 0 24px 60px rgba(15, 31, 61, 0.14);
+  --shadow-sm: 0 1px 3px rgba(30, 16, 51, 0.07);
+  --shadow:    0 10px 30px rgba(30, 16, 51, 0.10);
+  --shadow-lg: 0 24px 60px rgba(30, 16, 51, 0.18);
   --transition: 0.3s ease;
 
   /* Type */
@@ -228,8 +229,8 @@ h1, h2, h3 {
   align-items: center;
   color: var(--white);
   background:
-    radial-gradient(900px 500px at 75% 12%, rgba(194, 163, 90, 0.18), transparent 60%),
-    radial-gradient(700px 500px at 10% 90%, rgba(86, 120, 180, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 75% 12%, rgba(201, 168, 95, 0.16), transparent 60%),
+    radial-gradient(700px 500px at 10% 90%, rgba(150, 92, 214, 0.30), transparent 55%),
     linear-gradient(160deg, var(--navy) 0%, var(--slate) 100%);
   padding-block: var(--space-6) var(--space-5);
 }
@@ -335,7 +336,7 @@ h1, h2, h3 {
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  background: rgba(194, 163, 90, 0.12);
+  background: rgba(201, 168, 95, 0.12);
   color: var(--gold-dark);
   margin-bottom: var(--space-2);
 }
@@ -347,7 +348,7 @@ h1, h2, h3 {
 .testimonials {
   padding-block: var(--space-6);
   background:
-    radial-gradient(700px 400px at 80% 0%, rgba(194, 163, 90, 0.12), transparent 60%),
+    radial-gradient(700px 400px at 80% 0%, rgba(150, 92, 214, 0.20), transparent 60%),
     linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
 }
 .carousel {
@@ -465,24 +466,83 @@ h1, h2, h3 {
   gap: var(--space-4);
 }
 .contact-intro .section-title { text-align: left; }
+
+/* Lead-magnet scarcity badge */
+.lead-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 var(--space-2);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gold-dark);
+  background: rgba(201, 168, 95, 0.14);
+  border: 1px solid rgba(201, 168, 95, 0.35);
+  border-radius: 999px;
+}
+.lead-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 rgba(201, 168, 95, 0.6);
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(201, 168, 95, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(201, 168, 95, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 168, 95, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lead-badge-dot { animation: none; }
+}
+
 .contact-points {
   margin-top: var(--space-3);
   display: grid;
-  gap: 0.7rem;
+  gap: 0.85rem;
 }
 .contact-points li {
   position: relative;
-  padding-left: 1.8rem;
+  padding-left: 2rem;
   color: var(--slate);
 }
+.contact-points li strong { color: var(--navy); font-weight: 600; }
 .contact-points li::before {
   content: "";
   position: absolute;
-  left: 0; top: 0.55em;
-  width: 12px; height: 12px;
+  left: 0; top: 0.2em;
+  width: 20px; height: 20px;
   border-radius: 50%;
-  background: rgba(194, 163, 90, 0.25);
-  border: 2px solid var(--gold);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center / 12px no-repeat,
+    var(--gold);
+}
+
+/* Social-proof / trust line under the value stack */
+.contact-trust {
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.contact-trust strong { color: var(--navy); }
+.contact-stars {
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-right: 0.4rem;
+}
+
+/* Kicker above the form */
+.form-kicker {
+  margin: 0 0 var(--space-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold-dark);
 }
 
 .form-wrap {
@@ -521,7 +581,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(194, 163, 90, 0.18);
+  box-shadow: 0 0 0 3px rgba(201, 168, 95, 0.18);
   background: var(--surface);
 }
 textarea { resize: vertical; }
@@ -570,7 +630,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] {
   justify-content: center;
   width: 64px; height: 64px;
   border-radius: 50%;
-  background: rgba(194, 163, 90, 0.15);
+  background: rgba(201, 168, 95, 0.15);
   color: var(--gold-dark);
   margin-bottom: var(--space-2);
 }

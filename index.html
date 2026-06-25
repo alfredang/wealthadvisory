@@ -4,7 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sterling &amp; Vale Advisory — Long-Term Wealth Management</title>
-  <meta name="description" content="Sterling & Vale Advisory provides calm, long-term wealth management for professionals and families: wealth planning, retirement strategy, portfolio management, and estate planning." />
+  <meta name="description" content="Book a free, no-obligation Wealth Health Check with a senior fiduciary advisor. Sterling & Vale offers wealth planning, retirement strategy, portfolio management, and estate planning for professionals and families." />
+  <meta name="theme-color" content="#1e1033" />
+  <link rel="canonical" href="https://alfredang.github.io/wealthadvisory/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sterling &amp; Vale Advisory" />
+  <meta property="og:title" content="Free Wealth Health Check — Sterling &amp; Vale Advisory" />
+  <meta property="og:description" content="Claim a free, no-obligation Wealth Health Check with a senior fiduciary advisor. Clear, jargon-free next steps within one business day." />
+  <meta property="og:url" content="https://alfredang.github.io/wealthadvisory/" />
+  <meta property="og:image" content="https://alfredang.github.io/wealthadvisory/screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Wealth Health Check — Sterling &amp; Vale Advisory" />
+  <meta name="twitter:description" content="Claim a free, no-obligation Wealth Health Check with a senior fiduciary advisor." />
+  <meta name="twitter:image" content="https://alfredang.github.io/wealthadvisory/screenshot.png" />
+
+  <!-- Structured data: helps search engines understand the business (seo-audit: schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Sterling & Vale Advisory",
+    "description": "Independent, fiduciary wealth management for professionals and families: wealth planning, retirement strategy, portfolio management, and estate planning.",
+    "url": "https://alfredang.github.io/wealthadvisory/",
+    "image": "https://alfredang.github.io/wealthadvisory/screenshot.png",
+    "email": "angch@tertiaryinfotech.com",
+    "foundingDate": "2004",
+    "areaServed": "US",
+    "knowsAbout": ["Wealth Planning", "Retirement Strategy", "Portfolio Management", "Estate Planning"],
+    "makesOffer": {
+      "@type": "Offer",
+      "name": "Complimentary Wealth Health Check",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "A free, no-obligation portfolio and wealth-plan review with a senior fiduciary advisor."
+    }
+  }
+  </script>
 
   <!-- Google Fonts: Playfair Display (serif headings) + Inter (sans body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,7 +95,7 @@
           that lasts.
         </p>
         <div class="hero-actions reveal">
-          <a href="#contact" class="btn btn--gold">Book a Consultation</a>
+          <a href="#contact" class="btn btn--gold">Get My Free Wealth Check</a>
           <a href="#services" class="btn btn--ghost">Explore Our Services</a>
         </div>
 
@@ -223,20 +260,28 @@
     <section class="contact" id="contact" aria-labelledby="contact-heading">
       <div class="container contact-inner">
         <div class="contact-intro reveal">
-          <p class="section-eyebrow">Let's talk</p>
-          <h2 id="contact-heading" class="section-title">Book a consultation</h2>
+          <p class="lead-badge"><span class="lead-badge-dot" aria-hidden="true"></span>Free this month · Only 5 reviews available</p>
+          <p class="section-eyebrow">Your complimentary offer</p>
+          <h2 id="contact-heading" class="section-title">Claim your free Wealth&nbsp;Health Check</h2>
           <p class="section-lead">
-            Tell us a little about your goals. We'll be in touch within one business day —
-            no obligation, no jargon.
+            In 30 focused minutes, a senior fiduciary advisor reviews your portfolio and
+            goals and hands you a clear, written action plan. No cost, no obligation, no jargon —
+            a <strong>$750 review, free</strong> for new enquiries.
           </p>
           <ul class="contact-points">
-            <li>A confidential, no-pressure conversation</li>
-            <li>Clear next steps tailored to you</li>
-            <li>Speak directly with a senior advisor</li>
+            <li><strong>A personal portfolio review</strong> — what's working, what's quietly costing you.</li>
+            <li><strong>A written action plan</strong> with clear next steps tailored to you.</li>
+            <li><strong>Direct access to a senior advisor</strong> — not a call centre, not a bot.</li>
+            <li><strong>A reply within one business day</strong> — confidential and pressure-free.</li>
           </ul>
+          <p class="contact-trust">
+            <span class="contact-stars" aria-hidden="true">★★★★★</span>
+            Trusted by families managing <strong>$10B+</strong> in assets · <strong>98%</strong> client retention
+          </p>
         </div>
 
         <div class="form-wrap reveal">
+          <p class="form-kicker">Claim your free review</p>
           <form id="enquiryForm" class="enquiry-form" novalidate>
             <!-- Honeypot: hidden from users, catches bots -->
             <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -273,15 +318,15 @@
             </div>
 
             <div class="field">
-              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="err-message" placeholder="What would you like help with?"></textarea>
+              <label for="message">What would you like reviewed? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="err-message" placeholder="e.g. I'd like a second opinion on my retirement portfolio and where I might be over-paying in fees."></textarea>
               <p class="field-error" id="err-message" role="alert"></p>
             </div>
 
-            <button type="submit" class="btn btn--gold btn--block" id="submitBtn">Send Enquiry</button>
+            <button type="submit" class="btn btn--gold btn--block" id="submitBtn">Claim My Free Wealth Health Check →</button>
 
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <p class="form-fineprint">By submitting, you agree to be contacted about your enquiry. We never share your details.</p>
+            <p class="form-fineprint">Free &amp; no obligation · We reply within one business day · We never share your details.</p>
           </form>
 
           <!-- Success message, shown after a successful submit -->
@@ -289,8 +334,8 @@
             <span class="success-check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
             </span>
-            <h3>Thank you</h3>
-            <p>Thanks — we'll be in touch within one business day.</p>
+            <h3>Your free review is reserved</h3>
+            <p>A senior advisor will be in touch within one business day to schedule your complimentary Wealth Health Check.</p>
           </div>
         </div>
       </div>

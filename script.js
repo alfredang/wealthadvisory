@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         interest: form.interest.value,
         message: fields.message.el.value.trim(),
         // FormSubmit helper fields
-        _subject: "New enquiry from Sterling & Vale website",
+        _subject: "🔔 New Free Wealth Health Check request — Sterling & Vale website",
         _template: "table",
         _captcha: "false",
       };
