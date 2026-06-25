@@ -12,6 +12,7 @@ Styled in a premium **deep-purple + gold** theme, the page is built around a sin
 - `index.html` — markup and content
 - `styles.css` — mobile-first styling, themed via `:root` custom properties
 - `script.js` — nav, smooth scroll, scroll-in animations, testimonial carousel, form handling
+- Signature visuals are pure **inline SVG/CSS** (no images/libraries): a self-drawing "grow & protect" hero portfolio chart, hero trust badges, and an S&V monogram
 - `.github/workflows/deploy.yml` — GitHub Actions workflow that deploys to GitHub Pages
 - `README.md` — this file
 
