@@ -8,3 +8,7 @@ skills-lock.json
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Playwright MCP test-run artifacts (not part of the published site)
+.playwright-mcp/
+site-with-social.png

@@ -284,11 +284,131 @@ document.addEventListener("DOMContentLoaded", () => {
       successEl.hidden = false;
       successEl.setAttribute("tabindex", "-1");
       successEl.focus({ preventScroll: true });
+      announce(
+        "Hurray, thank you for your submission, we will get back to you in 1 business day"
+      );
+      launchBalloons();
+    }
+
+    // Speak the confirmation message via the Web Speech API (best-effort).
+    function announce(text) {
+      try {
+        const synth = window.speechSynthesis;
+        if (!synth || typeof SpeechSynthesisUtterance === "undefined") return;
+        synth.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.rate = 1;
+        utter.pitch = 1;
+        utter.volume = 1;
+        synth.speak(utter);
+      } catch (_) {
+        /* speech unsupported — no-op */
+      }
+    }
+
+    // Float a burst of celebratory balloons up the screen, then clean up.
+    function launchBalloons() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const layer = document.createElement("div");
+      layer.className = "balloon-layer";
+      layer.setAttribute("aria-hidden", "true");
+
+      const colors = [
+        "#c8a96a", // muted gold accent
+        "#1f2a44", // deep navy
+        "#5b6b8c", // slate
+        "#e6c98f",
+        "#9fb0cf",
+      ];
+      const COUNT = 24;
+
+      for (let i = 0; i < COUNT; i++) {
+        const balloon = document.createElement("span");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.background = colors[i % colors.length];
+        balloon.style.animationDuration = 4 + Math.random() * 3 + "s";
+        balloon.style.animationDelay = Math.random() * 1.2 + "s";
+        balloon.style.transform = "scale(" + (0.7 + Math.random() * 0.6) + ")";
+        layer.appendChild(balloon);
+      }
+
+      document.body.appendChild(layer);
+      setTimeout(() => layer.remove(), 8000);
     }
   })();
 
   /* --------------------------------------------------------------
-     7. FOOTER YEAR (auto-updating)
+     7. WHATSAPP CHAT WIDGET
+     Floating launcher + panel of suggested queries. Clicking a
+     suggestion (or sending a typed message) opens a WhatsApp chat
+     deep-link to the firm's number with the message pre-filled.
+  -------------------------------------------------------------- */
+  (function whatsappWidget() {
+    const widget = document.getElementById("waWidget");
+    if (!widget) return;
+
+    const PHONE = "6596983731"; // Sterling & Vale WhatsApp (intl format, no +)
+
+    const launcher = document.getElementById("waLauncher");
+    const panel = document.getElementById("waPanel");
+    const closeBtn = document.getElementById("waClose");
+    const suggestions = document.getElementById("waSuggestions");
+    const compose = document.getElementById("waCompose");
+    const input = document.getElementById("waInput");
+
+    function openWhatsApp(message) {
+      const url =
+        "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener");
+    }
+
+    function openPanel() {
+      panel.hidden = false;
+      widget.classList.add("open");
+      launcher.setAttribute("aria-expanded", "true");
+      launcher.setAttribute("aria-label", "Close WhatsApp chat");
+      input.focus({ preventScroll: true });
+    }
+    function closePanel() {
+      panel.hidden = true;
+      widget.classList.remove("open");
+      launcher.setAttribute("aria-expanded", "false");
+      launcher.setAttribute("aria-label", "Chat on WhatsApp");
+      launcher.focus({ preventScroll: true });
+    }
+    function togglePanel() {
+      panel.hidden ? openPanel() : closePanel();
+    }
+
+    launcher.addEventListener("click", togglePanel);
+    closeBtn.addEventListener("click", closePanel);
+
+    // Suggested-query chips
+    suggestions.addEventListener("click", (e) => {
+      const chip = e.target.closest(".wa-chip");
+      if (!chip) return;
+      openWhatsApp(chip.textContent.trim());
+    });
+
+    // Typed message
+    compose.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      openWhatsApp(text);
+      input.value = "";
+    });
+
+    // Close on Escape when the panel is open
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !panel.hidden) closePanel();
+    });
+  })();
+
+  /* --------------------------------------------------------------
+     8. FOOTER YEAR (auto-updating)
   -------------------------------------------------------------- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
