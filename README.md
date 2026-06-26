@@ -11,7 +11,7 @@ Styled in a premium **deep-purple + gold** theme, the page is built around a sin
 ## Files
 - `index.html` — markup and content
 - `styles.css` — mobile-first styling, themed via `:root` custom properties
-- `script.js` — nav, smooth scroll, scroll-in animations, testimonial carousel, form handling
+- `script.js` — nav, smooth scroll, scroll-in animations, testimonial carousel, form handling, WhatsApp chat widget
 - Signature visuals are pure **inline SVG/CSS** (no images/libraries): a self-drawing "grow & protect" hero portfolio chart, hero trust badges, and an S&V monogram
 - `.github/workflows/deploy.yml` — GitHub Actions workflow that deploys to GitHub Pages
 - `README.md` — this file
@@ -58,8 +58,12 @@ Until you click the activation link, submissions will **not** arrive in your inb
 ### Spam protection
 A hidden honeypot field (`_honey`) is included and hidden via CSS. Bots that fill it are silently ignored. The form also sends `_captcha: "false"`, `_template: "table"`, and a custom `_subject` to FormSubmit.
 
+## Social & contact
+- **Footer social links** — LinkedIn, X, Facebook, Instagram, and YouTube icons (inline SVG). The URLs are **placeholder handles** — replace them with the firm's real profiles.
+- **WhatsApp chat widget** — a floating launcher opens a chat panel with suggested questions; sending hands off to WhatsApp. Update the target number/handles before going live.
+
 ## SEO
-The `<head>` includes a canonical URL, Open Graph + Twitter Card tags, a `theme-color`, and `FinancialService` JSON-LD structured data (with the free-review `Offer`) so the page presents well in search results and social shares.
+The `<head>` includes a canonical URL, Open Graph + Twitter Card tags, a `theme-color`, and `FinancialService` JSON-LD structured data (with the free-review `Offer` and `sameAs` social profile links) so the page presents well in search results and social shares.
 
 ## Notes
 - Disclaimer in the footer: *"This website is for informational purposes only and does not constitute financial advice."*
