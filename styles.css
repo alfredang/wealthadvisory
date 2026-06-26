@@ -848,6 +848,19 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] {
   margin-top: var(--space-3);
 }
 .footer-copy { margin: 0; font-size: 0.88rem; }
+.powered-by {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.58);
+}
+.powered-by a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+.powered-by a:hover,
+.powered-by a:focus-visible {
+  text-decoration: underline;
+}
 .footer-disclaimer {
   margin: 0;
   font-size: 0.82rem;

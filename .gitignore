@@ -9,6 +9,26 @@ skills-lock.json
 Thumbs.db
 .vscode/
 
+# Sensitive local files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+id_rsa
+id_ed25519
+*.keystore
+*.jks
+.htpasswd
+.netrc
+.npmrc
+
 # Playwright MCP test-run artifacts (not part of the published site)
 .playwright-mcp/
 site-with-social.png
+
+# Dependency folders, if created locally
+node_modules/

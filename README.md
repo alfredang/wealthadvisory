@@ -1,71 +1,77 @@
-# Sterling & Vale Advisory — One-Page Website
+# Sterling & Vale Advisory
 
-A polished, responsive one-page investment advisory site built with **vanilla HTML, CSS, and JavaScript** — no frameworks, no build tools. The only external dependency is Google Fonts (Playfair Display + Inter).
+![Static Site](https://img.shields.io/badge/site-static_HTML-1e1033)
+![GitHub Pages](https://img.shields.io/badge/deploy-GitHub_Pages-2ea44f)
+![License](https://img.shields.io/badge/license-proprietary-c9a85f)
 
-Styled in a premium **deep-purple + gold** theme, the page is built around a single conversion: a free, no-obligation **Wealth Health Check** lead-magnet enquiry form that emails submissions to the firm via FormSubmit.
+Long-term wealth management landing page for Sterling & Vale Advisory.
 
-🔗 **Live site:** https://alfredang.github.io/wealthadvisory/
+## Live Demo
 
-![Sterling & Vale Advisory homepage](screenshot.png)
+[https://alfredang.github.io/wealthadvisory/](https://alfredang.github.io/wealthadvisory/)
 
-## Files
-- `index.html` — markup and content
-- `styles.css` — mobile-first styling, themed via `:root` custom properties
-- `script.js` — nav, smooth scroll, scroll-in animations, testimonial carousel, form handling, WhatsApp chat widget
-- Signature visuals are pure **inline SVG/CSS** (no images/libraries): a self-drawing "grow & protect" hero portfolio chart, hero trust badges, and an S&V monogram
-- `.github/workflows/deploy.yml` — GitHub Actions workflow that deploys to GitHub Pages
-- `README.md` — this file
+## Screenshot
 
-## Run / test locally
-No server or build step is required:
+![Project home screen](screenshot.png)
 
-1. Double-click `index.html` (or right-click → Open With → your browser).
-2. Check: sticky nav, smooth-scrolling anchors, hero "Get My Free Wealth Check" jumps to the form, the testimonial carousel auto-rotates with working prev/next + dots, and sections fade in on scroll.
-3. Resize the window to ~375px / ~768px / ~1280px to confirm the hamburger menu, card stacking, and overall responsiveness.
-4. Open DevTools → Console to confirm there are no errors.
+## About
 
-> Tip: a couple of features (smooth scrolling, fetch) behave most reliably when served over `http://` rather than `file://`. If you want that, run a quick static server from this folder:
-> ```
-> python -m http.server 8000
-> ```
-> then open http://localhost:8000
+This is a responsive static website for a fiduciary wealth advisory brand. It presents services, testimonials, a complimentary Wealth Health Check enquiry form, and a WhatsApp chat widget.
 
-## Deployment
-The site auto-deploys to **GitHub Pages** via GitHub Actions. Every push to the `main` branch triggers the `Deploy to GitHub Pages` workflow, which publishes the repo root. You can also trigger it manually from the **Actions** tab → "Run workflow".
+## Features
 
-## The enquiry form (FormSubmit)
-The form submits via **FormSubmit's AJAX endpoint** using `fetch()`, so the page never redirects. On success the form is replaced with an inline thank-you message; on error it shows an inline error and re-enables the button.
+- Responsive one-page landing site
+- Wealth advisory service sections
+- Testimonial carousel
+- Client enquiry form with validation
+- Floating WhatsApp chat widget
+- SEO metadata, Open Graph tags, and structured data
+- GitHub Pages deployment workflow
 
-### Set your email
-In `script.js`, find the line marked `// REPLACE_WITH_YOUR_EMAIL`:
+## Tech Stack
 
-```js
-const ENDPOINT = "https://formsubmit.co/ajax/angch@tertiaryinfotech.com";
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- GitHub Pages
+
+## Architecture
+
+The project is a plain static site. `index.html` defines the content and structure, `styles.css` handles layout and responsive styling, and `script.js` handles interactions such as navigation, carousel behavior, form validation, and WhatsApp launcher behavior.
+
+## Project Structure
+
+```text
+.
+├── .github/workflows/deploy-pages.yml
+├── .gitignore
+├── README.md
+├── index.html
+├── screenshot.png
+├── script.js
+└── styles.css
 ```
 
-It is currently set to **angch@tertiaryinfotech.com**. Swap in any address you want enquiries delivered to.
+## Getting Started
 
-### ⚠️ One-time activation (required)
-FormSubmit requires a **one-time activation** the first time you submit to a new email address:
+Run a local static server from the project root:
 
-1. Submit the form once from the page.
-2. FormSubmit sends a confirmation email to the address above.
-3. Click the activation link in that email.
-4. After that, all future submissions are delivered automatically.
+```bash
+python3 -m http.server 8081
+```
 
-Until you click the activation link, submissions will **not** arrive in your inbox.
+Open [http://127.0.0.1:8081/](http://127.0.0.1:8081/).
 
-### Spam protection
-A hidden honeypot field (`_honey`) is included and hidden via CSS. Bots that fill it are silently ignored. The form also sends `_captcha: "false"`, `_template: "table"`, and a custom `_subject` to FormSubmit.
+## Deployment
 
-## Social & contact
-- **Footer social links** — LinkedIn, X, Facebook, Instagram, and YouTube icons (inline SVG). The URLs are **placeholder handles** — replace them with the firm's real profiles.
-- **WhatsApp chat widget** — a floating launcher opens a chat panel with suggested questions; sending hands off to WhatsApp. Update the target number/handles before going live.
+The repository includes a GitHub Actions workflow that deploys the root static site to GitHub Pages after pushes to `main`.
 
-## SEO
-The `<head>` includes a canonical URL, Open Graph + Twitter Card tags, a `theme-color`, and `FinancialService` JSON-LD structured data (with the free-review `Offer` and `sameAs` social profile links) so the page presents well in search results and social shares.
+## Enquiry Form
 
-## Notes
-- Disclaimer in the footer: *"This website is for informational purposes only and does not constitute financial advice."*
-- All firm details, stats, and testimonials are fictional placeholders — update them as needed.
-- Animations respect `prefers-reduced-motion`.
+The contact form submits through FormSubmit's AJAX endpoint in `script.js`. The current endpoint uses `angch@tertiaryinfotech.com`. If that address changes, FormSubmit requires a one-time activation email confirmation before submissions are delivered.
+
+The form includes a hidden honeypot field and sends FormSubmit helper fields for table formatting, captcha disabling, and a custom subject line.
+
+## Credits
+
+Powered by [Tertiary Infotech Academy Pte Ltd](https://www.tertiaryinfotech.com/).
